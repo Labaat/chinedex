@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#151515">
+    <meta name="description" content="Guide de terrain hors ligne pour chiner du matériel photo vintage à la Braderie de Lille.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <title>Chinédex Photo</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+    <header class="app-header">
+      <div class="brand-block">
+        <button class="brand-mark" type="button" data-view-link="home" aria-label="Retour à l'accueil">C</button>
+        <div>
+          <p class="brand-name">CHINÉDEX</p>
+          <p class="brand-subtitle"><span id="product-count">0</span> pistes photo</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-button" id="install-button" type="button" hidden aria-label="Installer l'application">↓</button>
+        <button class="icon-button" id="theme-button" type="button" aria-label="Changer de thème" aria-pressed="false">◐</button>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="search-zone" aria-labelledby="search-title">
+        <div class="search-heading">
+          <div>
+            <p class="route-label">BRADERIE DE LILLE</p>
+            <h1 id="search-title">Ça vaut le coup&nbsp;?</h1>
+          </div>
+          <button class="target-counter" type="button" data-view-link="favorites" aria-label="Voir mes cibles favorites">
+            <span aria-hidden="true">★</span>
+            <strong id="favorite-count">0</strong>
+            <span>cibles</span>
+          </button>
+        </div>
+
+        <form class="search-box" id="search-form" role="search">
+          <label class="sr-only" for="search-input">Rechercher un appareil, une monture, un rendu ou une inscription</label>
+          <span class="search-symbol" aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" inputmode="search" autocomplete="off" placeholder="Helios, M42, 50 1.4, Zeiss…">
+          <button id="clear-search" class="clear-button" type="button" aria-label="Effacer la recherche" hidden>×</button>
+        </form>
+        <p class="search-hint" id="search-hint">Tape ce que tu lis sur l'objet. La recherche accepte les approximations.</p>
+
+        <div class="category-scroller" id="category-scroller" aria-label="Filtres rapides"></div>
+      </section>
+
+      <div id="app-view" aria-live="polite" aria-busy="false"></div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navigation principale">
+      <button type="button" data-view-link="home" class="nav-item is-active">
+        <span aria-hidden="true">⌂</span>
+        <span>Chiner</span>
+      </button>
+      <button type="button" data-view-link="favorites" class="nav-item">
+        <span aria-hidden="true">★</span>
+        <span>Cibles</span>
+      </button>
+      <button type="button" data-view-link="jackpots" class="nav-item">
+        <span aria-hidden="true">!</span>
+        <span>Jackpots</span>
+      </button>
+      <button type="button" data-view-link="magic" class="nav-item">
+        <span aria-hidden="true">Aa</span>
+        <span>Mots clés</span>
+      </button>
+    </nav>
+
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <div class="dialog-topbar">
+          <button class="dialog-back" id="dialog-close" type="button" aria-label="Fermer la fiche">←</button>
+          <span class="dialog-position" id="dialog-position"></span>
+          <button class="dialog-favorite" id="dialog-favorite" type="button" aria-label="Ajouter aux cibles" aria-pressed="false">☆</button>
+        </div>
+        <article id="product-detail"></article>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <noscript>
+      <section class="noscript-message">
+        <h1>JavaScript est nécessaire</h1>
+        <p>Le Chinédex utilise JavaScript localement pour la recherche, les fiches et les favoris. Aucune donnée n'est envoyée.</p>
+      </section>
+    </noscript>
+
+    <script src="data/products.js"></script>
+    <script src="app.js?v=5"></script>
+  </body>
+</html>

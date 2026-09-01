@@ -1,0 +1,27 @@
+{
+  "name": "Chinédex Photo",
+  "short_name": "Chinédex",
+  "description": "Guide de terrain pour chiner du matériel photo vintage à la Braderie de Lille.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#151515",
+  "theme_color": "#151515",
+  "categories": ["photography", "utilities", "reference"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
